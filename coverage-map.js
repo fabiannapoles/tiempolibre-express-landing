@@ -1,0 +1,6 @@
+fetch('./coverage/zones.geojson').then(r=>{if(!r.ok)throw Error();return r.json()}).then(data=>{
+ const map=L.map('coverage-map',{scrollWheelZoom:false}).setView([20.67,-103.35],10);
+ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',maxZoom:19}).addTo(map);
+ const zones=L.geoJSON(data,{style:f=>({color:f.properties.color,weight:2,fillOpacity:.12}),onEachFeature:(f,l)=>{const content=document.createElement('div');content.textContent=f.properties.name+' · '+(f.properties.surchargeCents?'Recargo indicado: $'+f.properties.surchargeCents/100:'Cobertura Exprés');l.bindPopup(content);}}).addTo(map);map.fitBounds(zones.getBounds());
+ const legend=document.querySelector('#coverage-legend');data.features.forEach(f=>{const item=document.createElement('li');item.textContent=f.properties.name+(f.properties.surchargeCents?' · +$'+f.properties.surchargeCents/100:'');legend.append(item);});
+ }).catch(()=>{document.querySelector('#coverage-map').textContent='No fue posible cargar el mapa. Consulta la cobertura con nuestro equipo.';});
