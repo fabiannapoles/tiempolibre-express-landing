@@ -1,6 +1,6 @@
 # Subdominio Exprés
 
-Dominio de esta landing: https://express.tiempolibreapp.com/
+Dominio de esta landing: https://expres.tiempolibreapp.com/
 
 Registro creado en Hostinger el 1 noviembre 2026:
 
