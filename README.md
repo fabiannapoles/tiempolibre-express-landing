@@ -10,3 +10,6 @@ Logo Exprés aportado por el usuario, conservado sin alteraciones; turquesa y bl
 
 ## Ver localmente
 Servir esta carpeta con cualquier servidor HTTP estático. No requiere dependencias ni compilación.
+
+## Rediseño premium
+Fotografía principal generada como ilustración comercial; no representa personal o clientes reales. Archivo WebP optimizado. La capa premium.css adapta portada, tipografía, tarifas, cobertura y contacto a escritorio y móvil. Se conservan logo, tarifas, políticas y geometrías aprobadas.
